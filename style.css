@@ -14,7 +14,6 @@ h2 {
 h3 {
   font-size: 18px;
   font-weight: 500;
-  
 }
 
 p {
@@ -32,29 +31,21 @@ section.alternate-background {
 }
 
 main img {
-  width: 100%;
-}
-
-
-#about img{
-  padding-top:6px;
-  padding-bottom: 12px;
-}
-#about,#ideas,#host{
-  display:flex;
-  flex-direction: column;
-  width:100%;
+  max-width: 100%;
+  margin-top: 4px;
+  margin-bottom:16px;
   
+  margin-right:16px;
 }
+
 /* ---  Groups & Items --- */
 
 .group {
   display: flex;
-  flex-direction: row;
-  
+  flex-direction: column;
 }
 
-.item{
+.item {
   flex: 1;
   margin: 10px;
 }
@@ -69,21 +60,25 @@ header {
   background-color: #ff385c;
   padding: 20px 20px 0 20px;
   text-align: center;
-  width:100%;
-  border-top: black;
-  border-right: black;
+  position:relative;
+}
+.containerForLogo{
+    display:flex;
+    flex-wrap:wrap;
   
-  border-bottom-width:0;
-  border-style:ridge;
-  border-top-width: 4px;
-  border-right-width:4px
+    justify-content: center;
 }
 
 .logo {
   font-family: "Pangolin", cursive;
-  font-size: 72px;
+  font-size: 58px;
   color: #fff;
   
+}
+.menu{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
 }
 
 header nav ul li {
@@ -101,46 +96,27 @@ header nav ul li a:hover {
   color: #bdbdbd;
   text-decoration: none;
 }
-header nav ul {
-  display:flex;
-  justify-content: center;
-  padding-bottom:15px;
-}
 
 /* -------  Search Form ------- */
 form {
   border: 2px solid #ff385c;
   padding: 10px;
-  width:100%;
-  height:100%;
-  
 }
-#theForm div{
-  display:flex;
-  flex-direction:row;
-  justify-content: space-between;
-  flex-wrap: wrap;
+.parentL{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
-
-
 
 form label {
-  margin-bottom:10px;
   font-weight: bold;
-  justify-content: space-between;
-  
 }
 
 form select,
 form input {
-
   margin-bottom: 20px;
-  width: 100%;
-  flex-basis:auto;
-  
-  
+  width: 180px;
 }
-
 
 form button {
   background-color: #ff385c;
@@ -150,87 +126,46 @@ form button {
   padding: 15px;
   width: 100%;
 }
-#stay{
-  
-  border-top:#ff385c;
-  border-left:black;
-  border-style:ridge;
-  border-right-style:none;
-  border-bottom-style:none;
-  border-right-width:0;
-  border-bottom-width:0;
-  border-width:4px;
-}
-
-
 
 /* -------  Footer ------- */
 
 footer {
   background-color: #ff385c;
-  padding:20px 20px 0 20px;
-  width:100%;
-  
 }
 
 footer p {
   color: #fff;
   text-align: center;
   padding: 20px;
-  
 }
 
 /* -------  Media Query ------- */
-@media all and (min-width: 480px){
+@media all and (min-width:480px){
+  /*------- Navigation and Logo ------- */
+  .logo{
+    font-size: 72px;
+  }
+  .containerForLogo{
+    justify-content:flex-start;
+  }
+  .menu{
+    justify-content:flex-end;
+}
+/* -------- The Form -------- */
+form{
   
-header {
- 
   display:flex;
   justify-content: space-between;
-  border-top: black;
-  border-left: black;
-
-  border-bottom-width:0;
-  border-right-width:0;
-  border-style:ridge;
-  border-top-width: 4px;
-  border-left-width:4px;
-  flex-wrap:wrap;
+  flex-wrap: wrap;
   
 }
-nav{
-  flex-wrap:wrap;
-}
-#stay{
-  border-top:none;
-  border-left:#bdbdbd;
-}
-
-#theForm {
-  display:flex;
-  flex-wrap:wrap;
-  
- 
-}
-form input{
-  flex-basis: auto;
-}
-#theForm div{
+.parentL{
   flex-direction: column;
-  width:100%;
-  justify-content: space-between;
-  max-width: 100%;
-  margin-left:60px;
-  flex:1;
-  
-
 }
-#theForm div:first-child{
-  margin-left:8px;
-}
+/*-------- Images --------*/
 .groupAbout{
   display:flex;
-  flex-direction: row;
+  flex-wrap: wrap;
   margin-top: 20px;
 }
 .image{
@@ -238,26 +173,30 @@ form input{
   margin-right:7px;
   margin-left:7px;
   align-self: center;
+  width:100px;
   
 }
 .halfTheContainer{
   flex:2;
   margin-right:15px;
-  margin-left: 7px;
+  margin-left:7px;
+  max-width:100%;
+  
 }
-
-.groupIdeas{
-  display:flex;
+.grid2x2{
+  min-height: 100%;
+  display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  flex-direction: row;
 }
-
 .imageIdeas{
-  flex:0 50%;
-
+  display: flex; 
+  flex-basis: calc(50% - 40px);  
+  justify-content: center;
+  flex-direction: column;
+  margin-left: 30px;
+  
 }
-
-
 .groupHost{
   display:flex;
   flex-direction: row;
@@ -269,14 +208,4 @@ form input{
   margin-right:7px;
   align-self: center;
 }
-#imageOne,#imageThree{
-  margin-right:6px;
-}
-#imageTwo,#imageFour{
-  margin-left:6px;
-}
-
-
-
- 
 }
